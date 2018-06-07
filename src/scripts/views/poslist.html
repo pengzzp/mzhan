@@ -1,0 +1,7 @@
+{{each list}}
+<li>
+    <img src='{{$value.imgUrl}}?x-oss-process=image/resize,m_fill,w_300,h_410'>
+    <h2>{{$value.productName}}</h2>
+    <p>{{salesPrice}}</p>
+</li>
+{{/each}}

@@ -1,0 +1,39 @@
+// .container footer ul li{
+//     font-size: .14rem;            
+//     flex: 1;
+//     text-align: center;
+//     position: relative;
+//     display: flex;flex-direction: column;
+//     justify-content: center;
+// }
+// footer ul li a{
+//     font-family: "iconfont";
+//     font-size: .18rem;
+//     color: #333;
+// }
+// .container footer ul li .active{
+//      color: rgb(82, 162, 228);
+// }
+.container{
+    footer{
+        ul{
+            li{
+                font-size: .14rem;            
+                @include flex();
+                text-align: center;
+                position: relative;
+                display: flex;flex-direction: column;
+                justify-content: center;
+                a{
+                    font-family: "iconfont";
+                    font-size: .18rem;
+                    color: #333;
+                    
+                }
+                &.active a{
+                    color: rgb(82, 162, 228);
+                }
+            }
+        }
+    }
+}
