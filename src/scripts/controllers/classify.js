@@ -6,8 +6,8 @@ const classifyController={
         $('.container main').html(classifyTpl)
     },
     async data_render(cateid){
-        let html=await model.find(cateid);
-        // console.log(html);
+        let html=await model.find('./dapu/mgallery-menu_cate.html',cateid);
+        html=html.replace(/\.\//g,"./dapu/");
         $('.classify .right .list').html(html);
     }
 }

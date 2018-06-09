@@ -19,17 +19,27 @@ change.init()
 change.route('/index',function(){
     homeController.render();
     homeController.swiper();
+    homeController.data_render({
+        name:'page',
+        value:1
+    });
 })
 // 类目页--------------------------------------------
 change.route('/classify',function(){
     classifyController.render();
-    classifyController.data_render(102);
+    classifyController.data_render({
+        name:'cateId',
+        value:102
+    });
     $('.classify .left li').on('click',function(){
         $(this).addClass('active').siblings().removeClass('active')
         let cateid=$(this).attr('cateid');
         let imageurl=$(this).attr('imageurl');
         let text=$(this).text();
-        classifyController.data_render(cateid);
+        classifyController.data_render({
+            name:'cateId',
+            value:cateid
+        });
         $(".classify .right .top img").attr('src',imageurl);
         $(".classify .right .middle span").html(text);
     })

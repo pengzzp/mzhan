@@ -75,6 +75,11 @@ gulp.task('copyhtml', () => {
     return gulp.src(['./src/*.html'])
       .pipe(gulp.dest('./dev/'))
   })
+  //图片
+  gulp.task('copyimages', () => {
+    return gulp.src(['./src/images/**/*'])
+      .pipe(gulp.dest('./dev/images'))
+  })
 //libs依赖包文件
 gulp.task('copylibs', () => {
     return gulp.src(['./src/libs/*.js','./src/libs/*.css'])
@@ -93,6 +98,6 @@ gulp.task('watch', () => {
   })
 
 
-gulp.task('default',['scss','js','copyhtml','copylibs','copyicon','server','watch'],()=>{
+gulp.task('default',['scss','js','copyhtml','copyimages','copylibs','copyicon','server','watch'],()=>{
    console.log('done.'); 
 });

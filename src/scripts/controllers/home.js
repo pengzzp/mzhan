@@ -1,10 +1,11 @@
 const model = require('../models/classify')
 const poslistTpl = require('../views/poslist.html')
 const homeTpl = require('../views/home.html');
+const scroll=require('../units/scroll1');
 // console.log(1)
 const homeController={
     render(){
-            $('.container main').html(homeTpl)
+            $('.container main').html(homeTpl);
       },
     swiper(){
         // console.log($('.container main .lbt'))
@@ -25,15 +26,12 @@ const homeController={
             });
 
         },
-        data_render(cb) {
-        model.find((result) => {
-            // let data=result.tags;
-            // let html = template.render(poslistTpl,result)
-            console.log(result);
-            //  console.log(html);
-            // cb(html)
-            // cb(data)
-        })
+        async data_render(cateid){
+            let html=await model.find('./dapu/mgallery-articlepage.html',cateid);
+            // html=html.replace(/\.\//g,"./dapu/");
+            $('.home .topic ul').html(html);
+            // console.log(html);
+            scroll('.home');
         }
 }
     
